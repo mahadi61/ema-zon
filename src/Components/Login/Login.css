@@ -1,0 +1,80 @@
+.login-container{
+    box-sizing: border-box;
+    width: 500px;
+    /* height: 600px; */
+    border: 1px solid #95A0A7;
+    border-radius: 8px;
+    margin: 50px auto;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.from-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.from-title{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 42px;
+    letter-spacing: 0.0025em;
+    color: #2A414F;
+}
+.from-control label{
+    display: block;
+    margin-bottom: 6px;
+}
+.from-control{
+    margin-bottom: 20px;
+}
+.from-control input{
+    width: 415px;
+    height: 40px;
+    padding:0 5px;
+    border: 1px solid #95A0A7;
+    border-radius: 5px;
+    font-size: 1.5em;
+}
+.submit-btn{
+    width: 415px;
+    height: 55px;
+    background: rgba(255, 153, 0, 0.3);
+    border-radius: 5px;
+    border: none;
+    margin-top: 30px;
+    font-size: 21px;
+    color: #0E161A;
+    font-family: 'Lato';
+}
+.submit-btn:hover{
+    background: rgba(255, 153, 0, 0.7);
+}
+.create-account{
+    margin: 10px;
+}
+.line{
+    width: 100%;
+    border: 1px solid #95A0A7;
+}
+.google-logo-container{
+    margin-top: 30px;
+}
+
+.google-img{
+    width: 25px;
+    margin: 0 20px;
+}
+.google-login-btn{
+    display: flex;
+    align-items: center;
+    margin: auto;
+    /* width: 415px; */
+    height: 55px;
+}
