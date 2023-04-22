@@ -1,11 +1,40 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../provider/AuthProvider";
 
 const SingUp = () => {
+  const { singUpWithEmailPassword } = useContext(AuthContext);
+
+  const [error, setError] = useState("");
+
+  const handleSingUp = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    const confirm = form.confirm.value;
+
+    if (password !== confirm) {
+      setError("Your password not match!");
+      return;
+    } else if (password.length < 6) {
+      setError("Password must be 6 characters");
+      return;
+    }
+    singUpWithEmailPassword(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.log(error));
+
+    form.reset();
+  };
+
   return (
     <div className="login-container">
       <h3 className="from-title">Sing Up</h3>
-      <form className="from-container">
+      <form onSubmit={handleSingUp} className="from-container">
         <div className="from-control">
           <label>Email</label>
           <input type="email" name="email" placeholder="Email" required />
@@ -23,11 +52,12 @@ const SingUp = () => {
           <label>Confirm Password</label>
           <input
             type="password"
-            name="password"
+            name="confirm"
             placeholder="Password"
             required
           />
         </div>
+        <p className="error">{error}</p>
         <input type="submit" className="submit-btn" value="Sing Up" />
         <div className="create-account">
           Already have an account? <Link to="/login">Login</Link>
