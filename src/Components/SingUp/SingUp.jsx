@@ -30,7 +30,7 @@ const SingUp = () => {
         </div>
         <input type="submit" className="submit-btn" value="Sing Up" />
         <div className="create-account">
-          New to Ema-john? <Link to="/sing-up">Create New Account</Link>
+          Already have an account? <Link to="/login">Login</Link>
         </div>
         <hr className="line" />
         <div className="google-logo-container">
