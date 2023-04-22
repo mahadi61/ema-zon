@@ -16,3 +16,13 @@
 .nav-link a:hover{
     color: orange;
 }
+.user-info{
+    margin: 0 20px;
+    color: white;
+}
+.btn-logout{
+    background-color: rgba(252, 173, 55, 0.7);
+}
+.btn-logout:hover{
+    background-color: rgba(255, 153, 0, 1);
+}

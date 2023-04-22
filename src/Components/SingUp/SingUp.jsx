@@ -14,6 +14,7 @@ const SingUp = () => {
     const password = form.password.value;
     const confirm = form.confirm.value;
 
+    setError("");
     if (password !== confirm) {
       setError("Your password not match!");
       return;
@@ -63,17 +64,17 @@ const SingUp = () => {
           Already have an account? <Link to="/login">Login</Link>
         </div>
         <hr className="line" />
-        <div className="google-logo-container">
-          <button className="google-login-btn">
-            <img
-              className="google-img"
-              alt="Google login"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svog.png"
-            />
-            Continue with Google
-          </button>
-        </div>
       </form>
+      <div className="google-logo-container">
+        <button className="google-login-btn">
+          <img
+            className="google-img"
+            alt="Google login"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svog.png"
+          />
+          Continue with Google
+        </button>
+      </div>
     </div>
   );
 };
