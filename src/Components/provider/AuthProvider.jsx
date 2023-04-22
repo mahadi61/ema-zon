@@ -13,12 +13,15 @@ export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loader, setLoader] = useState(true);
 
   const singUpWithEmailPassword = (email, password) => {
+    setLoader(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const singIn = (email, password) => {
+    setLoader(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
@@ -31,6 +34,7 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoader(false);
     });
     // stop observing while unmounting
     return () => {
@@ -40,6 +44,7 @@ const AuthProvider = ({ children }) => {
 
   const authInfo = {
     user,
+    loader,
     singUpWithEmailPassword,
     singIn,
     logOut,
